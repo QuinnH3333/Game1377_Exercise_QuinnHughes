@@ -58,18 +58,18 @@
             //b
             floatInput1 = Convert.ToSingle(Console.ReadLine());
             floatInput2 = Convert.ToSingle(Console.ReadLine());
-            //c
+            //c         WriteLines were not asked for, however they do help check the code works.
             floatInput2 = (floatInput2 + floatInput1);
-                //Console.WriteLine("Check Add: "+floatInput2);
+                Console.WriteLine("Check Add: "+floatInput2);
             //d
             floatInput2 = (floatInput2 - floatInput1);
-                //Console.WriteLine("Check Sub: " + floatInput2);
+                Console.WriteLine("Check Sub: " + floatInput2);
             //e
             floatInput2 = (floatInput1 * floatInput2);
-                //Console.WriteLine("Check Multi: " + floatInput2);
+                Console.WriteLine("Check Multi: " + floatInput2);
             //f
             floatInput2 = (floatInput2 / floatInput1);
-                //Console.WriteLine("Check Div: " + floatInput2);
+                Console.WriteLine("Check Div: " + floatInput2);
                     //End Assignment
         }
         static void CompareAndConditionals()
@@ -82,6 +82,19 @@
             //b
             intInput1 = Convert.ToInt32(Console.ReadLine());
             intInput2 = Convert.ToInt32(Console.ReadLine());
+            //c
+            if (intInput1 == intInput2)
+            {
+                Console.WriteLine("The inputs are equal.");
+            }
+            else if (intInput1 > intInput2)
+            {
+                Console.WriteLine(intInput1+" is greater than "+intInput2);
+            }
+            else
+            {
+                Console.WriteLine(intInput2 + " is greater than " + intInput1);
+            }
         }
     }
 }
