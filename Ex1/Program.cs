@@ -1,4 +1,4 @@
-﻿namespace Ex13
+﻿namespace Ex1
 {
     internal class Program
     {
