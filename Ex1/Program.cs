@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
             Strings();
             Arithmetic();
@@ -11,7 +11,7 @@
         }
         static void Strings()
         {
-                    //1.Strings
+            //1.Strings
             //a
             string stringA = "I’m in Game 1377: Scripting for Game Designers";
             //b
@@ -27,11 +27,11 @@
             Console.WriteLine(stringA.Substring(7, 4));
             //g
             Console.WriteLine(stringA.Substring(7, 1));
-                    //End Strings
+            //End Strings
         }
         static void Arithmetic()
         {
-                    //2.Arrithmitic  
+            //2.Arithmetic  
             Console.WriteLine("Please enter a whole number and press enter. Twice.");
             //a
             int intInput1;
@@ -39,18 +39,18 @@
             //b
             intInput1 = Convert.ToInt32(Console.ReadLine());
             intInput2 = Convert.ToInt32(Console.ReadLine());
-            //c + d     adding "lables" and write line for clarity though not technically asked.
+            //c + d     adding "labels" and write line for clarity though not technically asked.
             Console.WriteLine("Sum: " + (intInput1 + intInput2));
             Console.WriteLine("Difference: " + (intInput2 - intInput1));
             Console.WriteLine("Product: " + (intInput1 * intInput2));
-            //e         Converting imputs to floats/singles before mathing the math.
+            //e         Converting inputs to floats/singles before mathing the math.
             Console.WriteLine("Quotient: " + (Convert.ToSingle(intInput1) / Convert.ToSingle(intInput2)));
             Console.WriteLine("Remainder: " + (intInput1 % intInput2));
-                    //End Arrithmitic
+            //End Arithmetic
         }
         static void Assignment()
         {
-                    //3.Assignment
+            //3.Assignment
             Console.WriteLine("Please enter a number and press enter. Twice.");
             //a
             float floatInput1;
@@ -60,17 +60,17 @@
             floatInput2 = Convert.ToSingle(Console.ReadLine());
             //c         WriteLines were not asked for, however they do help check the code works.
             floatInput2 = (floatInput2 + floatInput1);
-                Console.WriteLine("Check Add: "+floatInput2);
+            Console.WriteLine("Check Add: " + floatInput2);
             //d
             floatInput2 = (floatInput2 - floatInput1);
-                Console.WriteLine("Check Sub: " + floatInput2);
+            Console.WriteLine("Check Sub: " + floatInput2);
             //e
             floatInput2 = (floatInput1 * floatInput2);
-                Console.WriteLine("Check Multi: " + floatInput2);
+            Console.WriteLine("Check Multi: " + floatInput2);
             //f
             floatInput2 = (floatInput2 / floatInput1);
-                Console.WriteLine("Check Div: " + floatInput2);
-                    //End Assignment
+            Console.WriteLine("Check Div: " + floatInput2);
+            //End Assignment
         }
         static void CompareAndConditionals()
         {
@@ -89,12 +89,13 @@
             }
             else if (intInput1 > intInput2)
             {
-                Console.WriteLine(intInput1+" is greater than "+intInput2);
+                Console.WriteLine(intInput1 + " is greater than " + intInput2);
             }
             else
             {
                 Console.WriteLine(intInput2 + " is greater than " + intInput1);
             }
+            //End Compare and Conditionals
         }
     }
 }
