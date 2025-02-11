@@ -6,7 +6,12 @@
         {
             Switch();
             LoopsAndArrays();
-
+            int[] intValues = [100, 94, 159, -783, 132, 179, 47, 107, 135, 50];
+            float[] floatingValues = { 1.4444444444f, 2.777777777777777777f, 3.555555555555555555555f, 5.8888888888888888f };
+            ElementsOfArray(intValues);
+            ElementsOfFloatingArray(floatingValues); //overloaded methods will switch depending on the parameter.
+            Console.WriteLine("Average of int array is: " + AverageOfIntArray(intValues));
+            Console.WriteLine("Average of floating point array is: " + AverageOfFloatingArray(floatingValues));
         }
         static void Switch()
         {   //switch
@@ -127,7 +132,7 @@
             {
                 Console.Write(generatedArray[i] + ", ");
             }
-
+            Console.WriteLine(); //move to next line for clarity
         }
         static int[] GenerateArray(int length, int min, int max)
         {
@@ -138,6 +143,60 @@
                 generateArray[i] = rnd.Next(min, max);
             }
             return generateArray;
+        }
+        static void ElementsOfArray(int[] array)
+        {
+            for (int i = 0; i != array.Length; i++)
+            {
+                Console.WriteLine("Element " + i + ": " + array[i]);
+            }
+        }
+        static void ElementsOfFloatingArray(float[] array)
+        {
+            for (int i = 0; i != array.Length; i++)
+            {
+                Console.WriteLine("Float Element " + i + ": " + array[i]);
+            }
+        }
+        static void ElementsOfFloatingArray(double[] array)
+        {
+            for (int i = 0; i != array.Length; i++)
+            {
+                Console.WriteLine("Double Element " + i + ": " + array[i]);
+            }
+        }
+        static float AverageOfIntArray(int[] array)
+        {
+            float average = 0f;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                average = average + array[i];
+            }
+            average = average / array.Length;
+            return average;
+        }
+        static float AverageOfFloatingArray(float[] array)
+        {
+            float average = 0f;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                average = average + array[i];
+            }
+            average = average / array.Length;
+            return average;
+        }
+        static float AverageOfFloatingArray(double[] array)
+        {
+            double average = 0f;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                average = average + array[i];
+            }
+            average = average / array.Length;
+            return Convert.ToSingle(average); //returning a float
         }
     }
 }
