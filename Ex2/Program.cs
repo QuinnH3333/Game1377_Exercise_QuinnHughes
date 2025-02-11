@@ -39,7 +39,7 @@
         {
             int[] intValues = [100, 94, 159, -783, 132, 179, 47, 107, 135, 50];
 
-            for (int i = 9; i >= 0; i--)
+            for (int i = 0; i <= 9; i++)
             {
                 Console.WriteLine(intValues[i]);
             }
@@ -72,6 +72,72 @@
                 }
             }
             Console.WriteLine("Loop Exited");
+
+            float average = 0f;
+            for (int i = 9; i >= 0; i--)
+            {
+                average = average + intValues[i];
+            }
+            average = average / intValues.Length;
+            Console.WriteLine("The average is: " + average);
+
+
+            for (int i = 0; i <= 9; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    continue;
+                }
+                else
+                {
+                    Console.WriteLine("Every other: " + intValues[i]);
+                }
+            }
+
+
+            for (int i = 0; i <= 9; i++)
+            {
+                if (i % 3 == 0)
+                {
+                    Console.WriteLine("Every third: " + intValues[i]);
+                }
+                else
+                {
+                    continue;
+                }
+            }
+
+            Console.WriteLine("Enter array size");
+            string? inputArraySize = (Console.ReadLine());
+            int.TryParse(inputArraySize, out int parsedArraySize);
+
+
+            Console.WriteLine("Enter array range min");
+            string? inputRangeMin = (Console.ReadLine());
+            int.TryParse(inputRangeMin, out int parsedRangeMin);
+
+            Console.WriteLine("Enter array range max");
+            string? inputRangeMax = (Console.ReadLine());
+            int.TryParse(inputRangeMax, out int parsedRangeMax);
+
+            Console.WriteLine("Array size : " + parsedArraySize + ". Range: " + parsedRangeMin + "," + parsedRangeMax);
+
+            int[] generatedArray = GenerateArray(parsedArraySize, parsedRangeMin, parsedRangeMax); //storing the new array
+            for (int i = 0; i < parsedArraySize; i++)
+            {
+                Console.Write(generatedArray[i] + ", ");
+            }
+
+        }
+        static int[] GenerateArray(int length, int min, int max)
+        {
+            Random rnd = new Random();
+            int[] generateArray = new int[length];
+            for (int i = 0; i < length; i++)
+            {
+                generateArray[i] = rnd.Next(min, max);
+            }
+            return generateArray;
         }
     }
 }
