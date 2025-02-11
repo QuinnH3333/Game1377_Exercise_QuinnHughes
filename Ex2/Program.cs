@@ -6,12 +6,12 @@
         {
             Switch();
             LoopsAndArrays();
-            int[] intValues = [100, 94, 159, -783, 132, 179, 47, 107, 135, 50];
-            float[] floatingValues = { 1.4444444444f, 2.777777777777777777f, 3.555555555555555555555f, 5.8888888888888888f };
-            ElementsOfArray(intValues);
-            ElementsOfFloatingArray(floatingValues); //overloaded methods will switch depending on the parameter.
-            Console.WriteLine("Average of int array is: " + AverageOfIntArray(intValues));
-            Console.WriteLine("Average of floating point array is: " + AverageOfFloatingArray(floatingValues));
+            int[] intArray = [5, 10, 15, 200, 69, 420];
+            float[] floatingArray = { 1.4444444444f, 2.777777777777777777f, 3.555555555555555555555f, 5.8888888888888888f };
+            ElementsOfArray(intArray);
+            ElementsOfFloatingArray(floatingArray); //overloaded methods will switch depending on the parameter.
+            Console.WriteLine("Average of int array: " + AverageOfIntArray(intArray));
+            Console.WriteLine("Average of floating point array: " + AverageOfFloatingArray(floatingArray));
         }
         static void Switch()
         {   //switch
@@ -112,7 +112,7 @@
                 }
             }
 
-            Console.WriteLine("Enter array size");
+            Console.WriteLine("Enter array length");
             string? inputArraySize = (Console.ReadLine());
             int.TryParse(inputArraySize, out int parsedArraySize);
 
@@ -125,17 +125,35 @@
             string? inputRangeMax = (Console.ReadLine());
             int.TryParse(inputRangeMax, out int parsedRangeMax);
 
-            Console.WriteLine("Array size : " + parsedArraySize + ". Range: " + parsedRangeMin + "," + parsedRangeMax);
+            Console.WriteLine("Array length : " + parsedArraySize + ". Range: " + parsedRangeMin + "," + parsedRangeMax);
 
             int[] generatedArray = GenerateArray(parsedArraySize, parsedRangeMin, parsedRangeMax); //storing the new array
-            for (int i = 0; i < parsedArraySize; i++)
+            int x = 0;
+            do
             {
-                Console.Write(generatedArray[i] + ", ");
+                Console.Write(generatedArray[x] + ", ");
+                x++;
             }
+            while (x < parsedArraySize);
+            //If 0 or less, ArraySize will be corrected to one in the output, but not here. Do-while loops run at least once.
             Console.WriteLine(); //move to next line for clarity
         }
         static int[] GenerateArray(int length, int min, int max)
         {
+            if (length < 1)
+            {
+                Console.WriteLine("Array length invalid. Setting to 1...");
+                length = 1;
+            }
+            if (min > max)
+            {
+                Console.WriteLine("Array range invalid. Switching min and max...");
+                int tempMin = min;
+                int tempMax = max;
+                min = tempMax;
+                max = tempMin;
+            }
+
             Random rnd = new Random();
             int[] generateArray = new int[length];
             for (int i = 0; i < length; i++)
@@ -153,7 +171,7 @@
         }
         static void ElementsOfFloatingArray(float[] array)
         {
-            for (int i = 0; i != array.Length; i++)
+            for (int i = 0; i != array.Length; i++) //Alternate way of comparing i in a for loop.
             {
                 Console.WriteLine("Float Element " + i + ": " + array[i]);
             }
